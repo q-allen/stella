@@ -1,0 +1,88 @@
+/* Load AFTER your existing minimalist styles.css. */
+/* Galaxy identity is concentrated in feature areas, not behind forms. */
+.hero-panel,
+.welcome,
+.auth {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 80% 20%, #6452aa38, transparent 48%),
+    radial-gradient(ellipse at 20% 80%, #2860a43b, transparent 48%),
+    linear-gradient(135deg, #07142e, #122849);
+}
+.hero-panel { color: #fff4d7; border: 1px solid #dfbb682e; }
+.hero-panel h2 { color: #fff4d7; }
+.hero-panel p { color: #c7d3e7; }
+.hero-panel .text-warning,
+.welcome .text-warning { color: #f2d38c !important; }
+.welcome { color: #fff4d7; }
+.welcome .lead { color: #c7d3e7; }
+.welcome .text-light { color: #f2d38c !important; }
+.hero-panel::before,
+.welcome::before,
+.auth::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 20% 25%, #fff4d7 95%, transparent),
+    radial-gradient(2px 2px at 75% 40%, #ffd778 95%, transparent),
+    radial-gradient(1px 1px at 45% 80%, #a8c7ef 95%, transparent);
+  background-size: 173px 157px, 281px 239px, 211px 193px;
+  opacity: .35;
+  animation: subtle-glitter 5s ease-in-out infinite alternate;
+}
+.btn-gold {
+  background: linear-gradient(115deg, #f9e1a2, #e6bb66);
+  border: 1px solid #d9b260;
+  color: #172b49;
+  box-shadow: none;
+}
+.btn-gold:hover {
+  background: #f1d28a;
+  border-color: #d9b260;
+  color: #172b49;
+}
+.brand { color: #1b2b44; }
+.sidebar a.active {
+  background: #fbf4e5;
+  color: #715624;
+  box-shadow: inset 3px 0 #d4ad58;
+}
+.component-card { border-color: #e7ebf0; }
+.component-card:hover {
+  border-color: #d6bc7c;
+  box-shadow: 0 6px 24px #b9923610;
+}
+.component-art {
+  background: #fff;
+  border-bottom: 1px solid #eee7d7;
+}
+.component-art img { object-fit: contain; }
+.component-meta span:last-child { color: #947126; }
+.component-bottom { border-top-color: #eee7d7; }
+.tabs a.active { background: #fbf4e5; color: #715624; }
+.form-control:focus,
+.form-select:focus {
+  border-color: #c9ab6c;
+  box-shadow: 0 0 0 3px #d6b76a20;
+}
+.auth .card { background: #fff; color: #253247; }
+@keyframes subtle-glitter {
+  from { opacity: .22; }
+  to { opacity: .45; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel::before,
+  .welcome::before,
+  .auth::before { animation: none; opacity: .3; }
+}
+@media print {
+  .hero-panel::before,
+  .welcome::before,
+  .auth::before { display: none; }
+}
